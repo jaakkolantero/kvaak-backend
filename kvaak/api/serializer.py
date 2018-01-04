@@ -11,6 +11,7 @@ class SpeciesSerializer(serializers.ModelSerializer):
 
 
 class SightingSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Sighting
-        fields = ('id', 'date_time', 'description', 'species', 'count',)
+        fields = ('id', 'dateTime', 'description', 'species', 'count',)
