@@ -4,7 +4,10 @@ from .models import Species
 from .models import Sighting
 from rest_framework import status
 from rest_framework.decorators import api_view
+from rest_framework.decorators import renderer_classes
 from rest_framework.response import Response
+from rest_framework.renderers import BrowsableAPIRenderer
+from .utils.renderer import CamelCaseJSONRenderer
 
 
 @api_view(['GET', 'POST'])
@@ -51,6 +54,7 @@ def species_detail(request, pk, format=None):
 
 
 @api_view(['GET', 'POST'])
+@renderer_classes((CamelCaseJSONRenderer, BrowsableAPIRenderer,))
 def sightings_list(request, format=None):
     """
     List all sightings
@@ -58,6 +62,7 @@ def sightings_list(request, format=None):
     if request.method == 'GET':
         sightings = Sighting.objects.all()
         serializer = SightingSerializer(sightings, many=True)
+        print(serializer.data)
         return Response(serializer.data)
     elif request.method == 'POST':
         serializer = SightingSerializer(data=request.data)

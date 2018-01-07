@@ -11,7 +11,7 @@ class Species(models.Model):
 
 class Sighting(models.Model):
     # TODO: check that only allowed datetime format allowed
-    dateTime = models.DateTimeField()
+    date_time = models.DateTimeField()
     description = models.TextField(max_length=500)
     species = models.ForeignKey(Species, to_field="name", on_delete=models.CASCADE, null=True)
     count = models.PositiveIntegerField(validators=[MinValueValidator(1)])
