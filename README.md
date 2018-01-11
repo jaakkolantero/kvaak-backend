@@ -53,39 +53,24 @@ Finally we can start our server and head out api endpoint to see some data.
 python manage.py runserver
 ```
 
-## Running the tests
+There is list and detail view for both species and sightings:
+- [http://localhost:8000/species/](http://localhost:8000/species/)
+- [http://localhost:8000/species/1](http://localhost:8000/species/1)
+- [http://localhost:8000/sightings/](http://localhost:8000/sightings/)
+- [http://localhost:8000/sightings/1](http://localhost:8000/sightings/1)
+
+## Running the tests (NOT READY YET ='( )
 
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+[deployment checklist](https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/)
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* [Django](https://www.djangoproject.com/) - The web framework used
+* [Django Rest Framework](http://www.django-rest-framework.org/) - DRF
 
 ## Versioning
 
@@ -93,9 +78,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Tero Jaakkola** - *Initial work* - [terokoodaa.io](https://terokoodaa.io/board/)
 
 ## License
 
@@ -104,5 +87,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
-* Inspiration
-* etc
