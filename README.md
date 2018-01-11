@@ -4,33 +4,54 @@ Backend for KvaaK  app created with Django.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. ~~See deployment for notes on how to deploy the project on a live system.~~
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.Instructions are made for Linux(Ubuntu 16.10).
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+To get started I presume you have python installed correctly(I'm using Python 3.6.4).
+Other recomended packages include ```pip```
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Clone repository.
 
 ```
-Give the example
+git clone https://github.com/terokoodaa/kvaak-backend.git
 ```
 
-And repeat
+Before we can go any futher we have to create a virtual environment and activate it.
+You can use any virtual environment you want but in this example I'm using [conda](https://conda.io)
 
 ```
-until finished
+pip install django djangorestframework
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Next we need to install [Django](https://www.djangoproject.com/) and [Django Rest Framework](http://www.django-rest-framework.org/). You can install them either with pip or conda. I'm using pip this time.
+
+```
+conda create --name kvaak python=3.6
+source activate kvaak
+```
+
+Before we can populate our database we have to migrate it.
+
+```
+cd kvaak-backend
+cd kvaak
+python manage.py migrate
+```
+
+Now we can populate our project with dummy data. Code for custom django-admin command [here](https://github.com/terokoodaa/kvaak-backend/blob/master/kvaak/api/management/commands/populate_db.py). populate_db always creates 6 species and number of sigthings based on argument given(If no argument given populate_db creates 6 sightings).
+
+```
+python manage.py populate_db 100
+```
+
+Finally we can start our server and head out api endpoint to see some data.
+
+```
+python manage.py runserver
+```
 
 ## Running the tests
 
