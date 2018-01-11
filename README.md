@@ -20,7 +20,7 @@ git clone https://github.com/terokoodaa/kvaak-backend.git
 ```
 
 Before we can go any futher we have to create a virtual environment and activate it.
-You can use any virtual environment you want but in this example I'm using [conda](https://conda.io)
+You can use any virtual environment you want but in this example I'm using [conda](https://conda.io).
 
 ```
 conda create --name kvaak python=3.6
@@ -41,7 +41,7 @@ cd kvaak
 python manage.py migrate
 ```
 
-Now we can populate our project with dummy data. Code for custom django-admin command [here](https://github.com/terokoodaa/kvaak-backend/blob/master/kvaak/api/management/commands/populate_db.py). populate_db always creates 6 species and number of sigthings based on argument given(If no argument given populate_db creates 6 sightings).
+Now we can populate our project with dummy data. Code for custom django-admin command can be found [here](https://github.com/terokoodaa/kvaak-backend/blob/master/kvaak/api/management/commands/populate_db.py). populate_db always creates 6 species and number of sigthings based on argument given(If no argument given populate_db creates 6 sightings).
 
 ```
 python manage.py populate_db 100
