@@ -8,8 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To get started I presume you have python installed correctly(I'm using Python 3.6.4).
-Other recomended packages include ```pip```
+To get started I presume you have ```python``` installed correctly(I'm using Python 3.6.4).
+Other recomended packages include ```pip```, ```conda```
 
 ### Installing
 
@@ -23,14 +23,14 @@ Before we can go any futher we have to create a virtual environment and activate
 You can use any virtual environment you want but in this example I'm using [conda](https://conda.io)
 
 ```
-pip install django djangorestframework
+conda create --name kvaak python=3.6
+source activate kvaak
 ```
 
 Next we need to install [Django](https://www.djangoproject.com/) and [Django Rest Framework](http://www.django-rest-framework.org/). You can install them either with pip or conda. I'm using pip this time.
 
 ```
-conda create --name kvaak python=3.6
-source activate kvaak
+pip install django djangorestframework
 ```
 
 Before we can populate our database we have to migrate it.
