@@ -10,6 +10,10 @@ class Species(models.Model):
 
 
 class Sighting(models.Model):
+
+    class no_species_specified():
+        name = "No species specified"
+
     # TODO: check that only allowed datetime format allowed
     id = models.IntegerField(primary_key=True)
     date_time = models.DateTimeField()
@@ -18,4 +22,6 @@ class Sighting(models.Model):
     count = models.PositiveIntegerField(validators=[MinValueValidator(1)])
 
     def __str__(self):
-        return self.species.name + " " + str(self.date_time)
+        if self.species:
+            return str(self.id) + " | " + self.species.name + " | " + str(self.date_time)
+        return str(self.id) + " | No species | " + str(self.date_time)
