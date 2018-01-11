@@ -74,7 +74,7 @@ Explain how to run the automated tests for this system
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/terokoodaa/kvaak-backend/tags). 
 
 ## Authors
 
