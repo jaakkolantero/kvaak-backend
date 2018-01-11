@@ -62,14 +62,29 @@ def sightings_list(request, format=None):
     if request.method == 'GET':
         sightings = Sighting.objects.all()
         serializer = SightingSerializer(sightings, many=True)
-        print(serializer.data)
         return Response(serializer.data)
+
     elif request.method == 'POST':
+        try:
+            request.data['id']
+        except KeyError:
+            request.data.update({'id': get_first_empty_id()})
         serializer = SightingSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+def get_first_empty_id():
+    new_id = 1
+    # new_id = Sighting.objects.count() + 1
+    while 1:
+        try:
+            Sighting.objects.get(id__exact=new_id)
+            new_id += 1
+        except Sighting.DoesNotExist:
+            return new_id
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
