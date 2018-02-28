@@ -33,6 +33,11 @@ Next we need to install [Django](https://www.djangoproject.com/) and [Django Res
 pip install django djangorestframework
 ```
 
+Install cors middleware.
+```
+pip install django-cors-headers
+```
+
 Before we can populate our database we have to migrate it.
 
 ```
